@@ -1,0 +1,85 @@
+{
+  "description": "string",
+  "environments": {},
+  "defaultEnv": "string",
+  "commands": [
+    {
+      "type": "string",
+      "attributes": {},
+      "commandLine": "string",
+      "name": "string"
+    }
+  ],
+  "projects": [
+    {
+      "type": "string",
+      "description": "string",
+      "source": {
+        "parameters": {},
+        "location": "string",
+        "type": "string"
+      },
+      "attributes": {},
+      "path": "string",
+      "links": [
+        {
+          "parameters": [
+            {
+              "type": "String",
+              "description": "string",
+              "required": false,
+              "valid": [
+                "string"
+              ],
+              "defaultValue": "string",
+              "name": "string"
+            }
+          ],
+          "method": "string",
+          "consumes": "string",
+          "produces": "string",
+          "requestBody": {
+            "description": "string"
+          },
+          "rel": "string",
+          "href": "string"
+        }
+      ],
+      "mixins": [
+        "string"
+      ],
+      "problems": [
+        {
+          "message": "string",
+          "code": 0
+        }
+      ],
+      "name": "string"
+    }
+  ],
+  "name": "string",
+  "links": [
+    {
+      "parameters": [
+        {
+          "type": "String",
+          "description": "string",
+          "required": false,
+          "valid": [
+            "string"
+          ],
+          "defaultValue": "string",
+          "name": "string"
+        }
+      ],
+      "method": "string",
+      "consumes": "string",
+      "produces": "string",
+      "requestBody": {
+        "description": "string"
+      },
+      "rel": "string",
+      "href": "string"
+    }
+  ]
+}
