@@ -1,0 +1,37 @@
+{
+  "environments": {
+    "default": {
+      "machines": {
+        "dev-machine": {
+          "attributes": {
+            "memoryLimitBytes": "2000000000"
+          },
+          "servers": {},
+          "agents": [
+            "org.eclipse.che.terminal",
+            "org.eclipse.che.ws-agent",
+            "org.eclipse.che.ssh"
+          ]
+        }
+      },
+      "recipe": {
+        "location": "eclipse/node",
+        "type": "dockerimage"
+      }
+    }
+  },
+  "defaultEnv": "default",
+  "projects": [],
+  "name": "use_rest_api",
+  "commands": [
+    {
+      "commandLine": "echo \"hello\"",
+      "name": "newCustom",
+      "attributes": {
+        "previewUrl": ""
+      },
+      "type": "custom"
+    }
+  ],
+  "links": []
+}
