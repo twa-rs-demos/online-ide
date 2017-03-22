@@ -3,7 +3,6 @@
 IP=10.0.0.21
 DATA_DIR=/home/afaren/che_data
 OPERATION="$1"
-NAME=tws
 
 docker run -it --rm \
 	-e CHE_HOST=${IP} \
