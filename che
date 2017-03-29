@@ -1,11 +1,13 @@
 #! /usr/bin/env bash
 
-IP=10.0.0.21
+IP=$(ip route get 1 | awk '{print $NF;exit}')
 DATA_DIR=/home/afaren/che_data
 COMMAND="$1"
+PORT="$2"
 
 docker run -it --rm \
 	-e CHE_HOST=${IP} \
+	-e CHE_PORT=${PORT} \
     -v ${DATA_DIR}:/data \
 	-v /var/run/docker.sock:/var/run/docker.sock  \
     eclipse/che ${COMMAND}
