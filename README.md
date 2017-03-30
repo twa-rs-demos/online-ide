@@ -1,9 +1,9 @@
 # Eclipse/che 
 
 ## Usage
-在 `che` 中，**修改变量 IP 为本机 IP**，然后运行脚本
+
 ```
-./che COMMAND
+./che COMMAND PORT
 ```
 其中，`COMMAND` 是想要做的操作，可选项有
 ```
@@ -31,9 +31,10 @@ version                              Installed version and upgrade paths
 ```
 具体内容参考[这里][https://www.eclipse.org/che/docs/setup/cli/index.html]
 
+PORT 是 che-server 启动的端口号 
 ### 启动/关闭 Eclipse/che
 ```
-./che start
-./che stop
+./che start 8080   # 在 8080 端口启动 che
+./che stop 8080    # 关闭在 8080 端口 启动的 che
 ```
 

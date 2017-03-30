@@ -1,9 +1,10 @@
 #! /usr/bin/env bash
 
 IP=$(ip route get 1 | awk '{print $NF;exit}')
-DATA_DIR=/home/afaren/che_data
+DATA_DIR=$(pwd -P)/data
 COMMAND="$1"
 PORT="$2"
+
 
 docker run -it --rm \
 	-e CHE_HOST=${IP} \
