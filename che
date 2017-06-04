@@ -1,14 +1,29 @@
 #! /usr/bin/env bash
 
-IP=$(ip route get 1 | awk '{print $NF;exit}')
+
+getIP() {
+    # get LAN IP of the host running che
+    # che DOCS say they auto-detect this value,
+    # but I found it doesn't work, this is why function getIP been used!
+    ip route get 1 | awk '{print $NF;exit}'
+}
+
+
+# If you are hosting Che at a cloud service like AWS, CHE_HOST must be
+# set to the server’s IP address like below
+# IP=your-AWS-external-IP
+
+# when running in LAN, comment next line if running che in cloud
+IP=$(getIP)
 DATA_DIR=$(pwd -P)/data
 COMMAND="$1"
 PORT="$2"
 
 
 docker run -it --rm \
-	-e CHE_HOST=${IP} \
-	-e CHE_PORT=${PORT} \
-    -v ${DATA_DIR}:/data \
-	-v /var/run/docker.sock:/var/run/docker.sock  \
+	--env CHE_HOST=${IP} \
+	--env CHE_PORT=${PORT} \
+    --volume ${DATA_DIR}:/data \
+	--volume /var/run/docker.sock:/var/run/docker.sock  \
     eclipse/che ${COMMAND}
+
